@@ -1,11 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
+import { Login } from './Login.js';
+import { WordLetterCounter } from './WordLetterCounter.js'
 
 const products = [
-  { id: 3, title: 'Apple', isFruit: true },
-  { id: 2, title: 'Potato', isFruit: false },
-  { id: 1, title: 'Garlic', isFruit: false },
+  { id: 3, name: 'Apple', isFruit: true },
+  { id: 2, name: 'Potato', isFruit: false },
+  { id: 1, name: 'Garlic', isFruit: false },
   
 ];
 
@@ -36,7 +38,7 @@ export default function MyApp() {
         <MyButton />
         <MyButton />
         <ShoppingList />
-
+        
         {/* <div>
           <h6>Counters that update together</h6>
           <GButton count={global} onClick={handleGlobal} />
@@ -45,7 +47,15 @@ export default function MyApp() {
 
         <GButtons />
 
-        <AboutPage />
+        <Login />
+
+        <h1>
+            Words and Letters
+            Counter
+          </h1>
+          <WordLetterCounter />
+
+        {/* <AboutPage /> */}
 
       </header>
     </div>
@@ -56,10 +66,11 @@ export default function MyApp() {
       <li
         key={product.id}
         style={{
+          textAlign: 'left',
           color: product.isFruit ? 'magenta' : 'darkgreen'
         }}
       >
-        {product.title}
+        {product.name}
       </li>
     );
   
